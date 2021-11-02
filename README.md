@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do projeto Taks Manager!
+# Boas vindas ao repositório do projeto Task Manager!
 
 ---
 

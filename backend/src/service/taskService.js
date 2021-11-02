@@ -8,11 +8,18 @@ const getAllTasks = async (userId) => {
 
 const createNewTask = async ({ tag, task, status, userId }) => {
   const validate = await validateTask({ task, status });
-
   if (validate !== null) return { erroCode: validate };
   
   const create = await taskModel.create({ tag, task, status, userId });
   return create;
+};
+
+const updateTask = async ({ tag, task, status, id }) => { 
+  const validate = await validateTask({ task, status });
+  if (validate !== null) return { erroCode: validate };
+
+  const update = await taskModel.update({ tag, task, status, id });
+  return update;
 };
 
 const deleteTask = async (id) => {
@@ -26,5 +33,6 @@ const deleteTask = async (id) => {
 module.exports = {
   getAllTasks,
   createNewTask,
+  updateTask,
   deleteTask
 };

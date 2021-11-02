@@ -1,4 +1,5 @@
 const connection = require('./connection');
+const { ObjectId } = require('mongodb'); 
 
 const getAll = async (userId) => {
   const db = await connection();
@@ -13,6 +14,15 @@ const create = async ({ tag, task, status, userId }) => {
   return { _id: inserted.insertedId, tag, task, status, userId };
 };
 
+const update = async ({ tag, task, status, id }) => {
+  const db = await connection();
+  await db.collection('tasks').updateOne(
+    { _id: ObjectId(id) }, 
+    { $set: { tag, task, status } },
+  );
+  return { _id: id, tag, task, status };
+};
+
 const exclude = async (id) => {
   const db = await connection();
   const recipe = await db.collection('tasks').findOne(ObjectId(id));
@@ -23,5 +33,6 @@ const exclude = async (id) => {
 module.exports = {
   getAll,
   create,
+  update,
   exclude
 };

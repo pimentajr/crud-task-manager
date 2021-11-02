@@ -13,7 +13,7 @@ const createUser = async (req, res) => {
     return res.status(201).json({ user });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Aconteceu erro ao cadastrar o usuário.' });
+    return res.status(500).json({ message: 'User error.' });
   }
 };
 

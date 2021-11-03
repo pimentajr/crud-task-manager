@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Wellcome from '../../images/organizing_projects.svg';
 import Data from '../../images/data.svg';
-import FormSignup from "../../components/FormSignup";
-import FormLogin from "../../components/FormLogin";
+import FormSignup from "../../components/Login/FormSignup";
+import FormLogin from "../../components/Login/FormLogin";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 export default function Login() {
   const [sign, setSign] = useState(false);
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem('key'));
+    token && (window.location.href = `${window.origin}/manager`);
+  });
 
   const selectScreen = (bool) => {
     setSign(bool);

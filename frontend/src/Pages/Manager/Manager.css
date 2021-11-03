@@ -1,0 +1,40 @@
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F9F6FD;
+}
+
+.notfound-container h1 {
+  color: #6823DB;
+  font-size: 48px;
+  font-weight: 600;
+  padding: 50px;
+}
+
+.notfound-container img {
+  margin-top: 100px;
+  width: 500px;
+}
+
+.link-btn {
+  width: 200px;
+  text-align: center;
+  margin: 100px 0;
+  padding: 10px;
+  border: 1px solid #6A2CD8;
+  border-radius: 6px;
+  color: white;
+  background-color: #6A2CD8;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.link-btn:hover {
+  border: 1px solid #6A2CD8;
+  color: #6A2CD8;
+  background-color: transparent;
+  transition: 0.5s;
+}

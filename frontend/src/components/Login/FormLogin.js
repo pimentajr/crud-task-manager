@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-import { fetchLogin } from '../helpers/fetch';
+import { fetchLogin } from '../../helpers/fetch';
 
 export default function FormLogin({ selectScreen }) {
   const [user, setUser] = useState({ email: '', password: '' });
@@ -25,6 +25,7 @@ export default function FormLogin({ selectScreen }) {
       setUser({ email: '', password: '' })
       localStorage.setItem('key', JSON.stringify(token));
       toast.success('Login Success', toastSettings);
+      window.location.href = `${window.origin}/manager`;
     }
   }
 

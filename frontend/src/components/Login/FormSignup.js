@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-import { fetchSignup } from '../helpers/fetch';
+import { fetchSignup } from '../../helpers/fetch';
 
 export default function FormSignup({ selectScreen }) {
   const [register, setRegister] = useState({ name: '', email: '', password: '' });

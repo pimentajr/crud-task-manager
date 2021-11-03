@@ -5,7 +5,6 @@ import './Manager.css';
 
 export default function Manager() {
   const token = JSON.parse(localStorage.getItem('key'));
-  console.log(token)
   return (
     <div>
       { token ? <Dashboard /> : <NotFound />}

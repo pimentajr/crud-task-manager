@@ -18,13 +18,12 @@ export default function FormLogin({ selectScreen }) {
   const loginButtonSubmit = async () => {
     const fetch = await fetchLogin(user)
     if (fetch.message) {
-      localStorage.setItem('key', '');
+      localStorage.removeItem('key');
       toast.error(fetch.message, toastSettings);
     } else {
       const { token } = fetch;
       setUser({ email: '', password: '' })
       localStorage.setItem('key', JSON.stringify(token));
-      toast.success('Login Success', toastSettings);
       window.location.href = `${window.origin}/manager`;
     }
   }

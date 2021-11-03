@@ -29,3 +29,19 @@ export function fetchSignup(register) {
 
   return response;
 }
+
+export function fetchGetTasks(token) {
+  const response = fetch('http://localhost:3001/tasks', {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': token
+    },
+  })
+    .then((res) => res.json())
+    .then((response) => response)
+    .catch((error) => error)
+
+  return response;
+}

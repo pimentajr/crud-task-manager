@@ -64,7 +64,7 @@ npm i
 npm run dev
 ```
 
-- E por fim, é necessário executar a aplicação. Após executar o código abaixo, basta acessar `http://localhost:3000/` em seu navegador.
+- E por fim, é necessário executar a aplicação. Após executar o código abaixo na pasta frontend, basta acessar `http://localhost:3000/` em seu navegador.
 
 ```bash
 # Executa a aplicação

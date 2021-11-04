@@ -225,5 +225,40 @@ button:hover:disabled {
   color: white;
 }
 
+.header-task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.header-task select {
+  margin-left: 10px;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+.no-task-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-task-image-container img {
+  width: 500px;
+  margin-bottom: 100px;
+}
+
+
 
 

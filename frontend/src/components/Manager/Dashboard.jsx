@@ -10,10 +10,24 @@ import Calendar from '../../components/Manager/Calendar';
 
 export default function Dashboard() {
   const [menu, setMenu] = useState({myTasks: 'selectButton'});
+  // const [quantity, setQuantity] = useState({ pending: 0, progress: 0, finished: 0 });
   const [tasks, setTasks] = useState([]);
+  const [order, setOrder] = useState('data');
+  
   const token = JSON.parse(localStorage.getItem('key'));
-
   const getToken = useRef(token)
+
+  useEffect(() => {
+    fetch();
+  }, []);
+
+  useEffect(() => {
+    orderTasks();
+  }, [order]);
+
+  const orderUpdate = (newOrder) => {
+    setOrder(newOrder);
+  }
 
   const fetch = async () => {
     try {
@@ -22,12 +36,7 @@ export default function Dashboard() {
     } catch (error) {
       console.error(error)
     }
-    
   }
-
-  useEffect(() => {
-    fetch();
-  }, []);
 
   const redirect = () => {
     localStorage.removeItem('key');
@@ -37,6 +46,30 @@ export default function Dashboard() {
   const selectMenu = ({target}) => {
     const name = target.getAttribute('name');
     setMenu({[name]: 'selectButton'});
+  }
+
+  // Sorting taken from the site: https://www.horadecodar.com.br/2021/01/11/como-ordenar-um-array-de-objetos-em-javascript/
+  const orderTasks = async () => {
+    switch (order) {
+      case 'data':
+        const data = tasks.sort((a, b) => a.date < b.date ? -1 : true)
+        setTasks(data)
+        break;
+      case 'tag':
+        const tag = tasks.sort((a, b) => a.tag < b.tag ? -1 : true)
+        setTasks(tag)
+        break;
+      case 'task':
+        const task = tasks.sort((a, b) => a.task < b.task ? -1 : true)
+        setTasks(task)
+        break;
+      case 'status':
+        const status = tasks.sort((a, b) => a.status > b.status ? -1 : true)
+        setTasks(status)
+        break;
+      default:
+        break;
+    }
   }
 
   return (
@@ -81,7 +114,7 @@ export default function Dashboard() {
           <h3>Finished: 0</h3>
         </div>
         <div className="components-container">
-          { menu.myTasks && <MyTasks tasks={tasks} fetch={fetch} /> }
+          { menu.myTasks && <MyTasks tasks={tasks} fetch={fetch} orderUpdate={orderUpdate} /> }
           { menu.kanban && <Kanban /> }
           { menu.calendar && <Calendar /> }
         </div>

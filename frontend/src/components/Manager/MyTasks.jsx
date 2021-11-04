@@ -4,8 +4,9 @@ import customStyles from './customStyles';
 import editImage from '../../images/edit.png';
 import excludeImage from '../../images/exclude.png';
 import { fetchDeleteTask, fetchNewTask, fetchUpdateTask } from '../../helpers/fetch';
+import NoTasks from '../../components/Manager/NoTasks';
 
-export default function MyTasks({ tasks, fetch }) {
+export default function MyTasks({ tasks, fetch, orderUpdate }) {
   const [showModal, setShowModal] = useState(false)
   const [editTask, setEditTask] = useState({tag: '', task: '', status: 'Pending'})
 
@@ -64,8 +65,21 @@ export default function MyTasks({ tasks, fetch }) {
 
   return (
     <div>
-      <h1>MyTasks</h1>
-      {tasks.map((task) => {
+      <div className="header-task">
+        <h1>MyTasks</h1>
+        { tasks.length > 0 &&  
+          <select name="order" onChange={({target}) => orderUpdate(target.value)}>
+            <option>Order by</option>
+            <option value="data">Data</option>
+            <option value="tag">Tag</option>
+            <option value="task">Task</option>
+            <option value="status">Status</option>
+          </select>
+        }
+      </div>
+      {tasks.length === 0 
+        ? <NoTasks />
+        : tasks.map((task) => {
         let colorStatus = '';
         switch (task.status) {
           case 'In Progress':
@@ -104,6 +118,7 @@ export default function MyTasks({ tasks, fetch }) {
            contentLabel="Minimal Modal Example"
            style={customStyles}
            ariaHideApp={false}
+           closeTimeoutMS={400}
         >
           <form className="form">
             <label>

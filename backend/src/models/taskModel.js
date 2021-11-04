@@ -10,7 +10,7 @@ const getAll = async (userId) => {
 const create = async ({ tag, task, status, userId }) => {
   const db = await connection();
   const inserted = await db.collection('tasks').insertOne({ 
-    tag, task, status, userId });
+    tag, task, status, userId, date: Date.now() });
   return { _id: inserted.insertedId, tag, task, status, userId };
 };
 

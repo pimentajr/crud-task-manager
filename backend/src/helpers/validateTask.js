@@ -1,8 +1,8 @@
 const { ObjectId } = require('mongodb'); 
 const connection = require('../models/connection');
 
-const validateTask = async ({ task, status }) => {
-  if (!task || !status) return 'Invalid entries. Try again.';
+const validateTask = async ({ tag, task, status }) => {
+  if (!tag || !task || !status) return 'Invalid entries. Try again.';
   return null;
 };
 

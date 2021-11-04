@@ -7,7 +7,7 @@ const getAllTasks = async (userId) => {
 };
 
 const createNewTask = async ({ tag, task, status, userId }) => {
-  const validate = await validateTask({ task, status });
+  const validate = await validateTask({ tag, task, status });
   if (validate !== null) return { erroCode: validate };
   
   const create = await taskModel.create({ tag, task, status, userId });
@@ -15,7 +15,7 @@ const createNewTask = async ({ tag, task, status, userId }) => {
 };
 
 const updateTask = async ({ tag, task, status, id }) => { 
-  const validate = await validateTask({ task, status });
+  const validate = await validateTask({ tag, task, status });
   if (validate !== null) return { erroCode: validate };
 
   const update = await taskModel.update({ tag, task, status, id });
@@ -26,7 +26,7 @@ const deleteTask = async (id) => {
   const validate = await validateIdExists(id);
   if (validate !== null) return { erroCode: validate };
 
-  const exclude = await recipesModel.exclude(id);
+  const exclude = await taskModel.exclude(id);
   return exclude;
 };
 

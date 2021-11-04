@@ -79,7 +79,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="nav-container">
-        <h3>Welcome NAME</h3>
+        <h3>Welcome</h3>
         <ul>
           <li 
             className={menu.myTasks}

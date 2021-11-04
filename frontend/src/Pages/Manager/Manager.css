@@ -1,3 +1,11 @@
+select {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-radius: 6px;
+  background: transparent;
+}
+
 .notfound-container {
   display: flex;
   flex-direction: column;
@@ -103,6 +111,7 @@
   padding: 20px;
   font-size: 20px;
   margin: 0 80px;
+  font-weight: 400;
 }
 
 .components-container {
@@ -112,6 +121,109 @@
   color: #585B61;
   width: 80vw;
   height: 90vh;
+  padding: 30px;
 }
+
+.components-container ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.components-container ul li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.components-container ul:hover {
+  background-color: #E3D7F8;
+  transition: 0.5s;
+}
+
+.components-container ul li img {
+  transform: rotate(90deg);
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+}
+
+.components-container ul li img:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+
+.task-tag  {
+  background-color: #6A2CD8;
+  width: 150px;
+  text-transform: uppercase;
+  justify-content: center;
+  color: white;
+}
+
+.task-task {
+  width: 1000px;
+  text-align: start;
+}
+
+.task-status {
+  width: 150px;
+  justify-content: center;
+}
+
+.selectButton {
+  border-right: 4px solid #6A2CD8;
+  background: rgb(106,44,216);
+  background: linear-gradient(270deg, rgba(106,44,216,0.30575980392156865) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+}
+
+.green {
+  background-color: rgb(217, 255, 159);
+}
+
+.red {
+  background-color: rgb(255, 167, 167);
+}
+
+.white {
+  background-color: white;
+}
+
+.container-new-task {
+  display: flex;
+  justify-content: center;
+}
+
+.new-task {
+  margin-top: 30px;
+  width: 300px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: #6A2CD8;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.new-task:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+button:hover:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+  color: white;
+}
+
 
 

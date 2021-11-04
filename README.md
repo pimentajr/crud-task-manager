@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do projeto Task Manager!
 
-- Nesse projeto foi desenvolvido uma aplicação completa com front-end com React, e back-end com Node.js e MongoDB. 
+- Nesse projeto foi desenvolvido uma aplicação completa com front-end utilizando React, e back-end utilizando Node.js e MongoDB. 
 
 - O principal problema resolvido com esse sistema, é auxiliar as pessoas colaboradoras de uma empresa fictícia apresentada no Blitz de Carreira da Trybe. A empresa estava passando por dificuldades na organização das tarefas de seus colaboradores, que afetava a produtividade da equipe.
 

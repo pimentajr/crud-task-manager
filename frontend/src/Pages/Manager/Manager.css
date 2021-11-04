@@ -188,8 +188,9 @@ select {
   background-color: rgb(255, 167, 167);
 }
 
-.white {
-  background-color: white;
+.grey {
+  background-color: grey;
+  color: white;
 }
 
 .container-new-task {
@@ -256,7 +257,7 @@ button:hover:disabled {
 
 .no-task-image-container img {
   width: 500px;
-  margin-bottom: 100px;
+  margin: 80px 0;
 }
 
 

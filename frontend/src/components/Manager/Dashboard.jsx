@@ -13,9 +13,10 @@ export default function Dashboard() {
   // const [quantity, setQuantity] = useState({ pending: 0, progress: 0, finished: 0 });
   const [tasks, setTasks] = useState([]);
   const [order, setOrder] = useState('data');
+  const [, updateState] = React.useState();
   
   const token = JSON.parse(localStorage.getItem('key'));
-  const getToken = useRef(token)
+  const getToken = useRef(token);
 
   useEffect(() => {
     fetch();
@@ -24,6 +25,8 @@ export default function Dashboard() {
   useEffect(() => {
     orderTasks();
   }, [order]);
+
+  const forceUpdate = React.useCallback(() => updateState({}), []);
 
   const orderUpdate = (newOrder) => {
     setOrder(newOrder);
@@ -34,7 +37,7 @@ export default function Dashboard() {
       const getTask = await fetchGetTasks(getToken.current);
       setTasks(getTask);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -52,24 +55,25 @@ export default function Dashboard() {
   const orderTasks = async () => {
     switch (order) {
       case 'data':
-        const data = tasks.sort((a, b) => a.date < b.date ? -1 : true)
-        setTasks(data)
+        const data = tasks.sort((a, b) => a.date < b.date ? -1 : true);
+        setTasks(data);
         break;
       case 'tag':
-        const tag = tasks.sort((a, b) => a.tag < b.tag ? -1 : true)
-        setTasks(tag)
+        const tag = tasks.sort((a, b) => a.tag < b.tag ? -1 : true);
+        setTasks(tag);
         break;
       case 'task':
-        const task = tasks.sort((a, b) => a.task < b.task ? -1 : true)
-        setTasks(task)
+        const task = tasks.sort((a, b) => a.task < b.task ? -1 : true);
+        setTasks(task);
         break;
       case 'status':
-        const status = tasks.sort((a, b) => a.status > b.status ? -1 : true)
-        setTasks(status)
+        const status = tasks.sort((a, b) => a.status > b.status ? -1 : true);
+        setTasks(status);
         break;
       default:
         break;
     }
+    forceUpdate();
   }
 
   return (

@@ -7,8 +7,8 @@ import { fetchDeleteTask, fetchNewTask, fetchUpdateTask } from '../../helpers/fe
 import NoTasks from '../../components/Manager/NoTasks';
 
 export default function MyTasks({ tasks, fetch, orderUpdate }) {
-  const [showModal, setShowModal] = useState(false)
-  const [editTask, setEditTask] = useState({tag: '', task: '', status: 'Pending'})
+  const [showModal, setShowModal] = useState(false);
+  const [editTask, setEditTask] = useState({tag: '', task: '', status: 'Pending'});
 
   const formatDate = (date) => {
     const convert = new Date(date);
@@ -18,7 +18,7 @@ export default function MyTasks({ tasks, fetch, orderUpdate }) {
 
     if (month.length < 2) 
         month = '0' + month;
-    if (day.length < 2) 
+    if (day.length < 2)
         day = '0' + day;
 
     return [year, month, day].join('-');
@@ -33,7 +33,7 @@ export default function MyTasks({ tasks, fetch, orderUpdate }) {
   const updateTask = async () => {
     const token = JSON.parse(localStorage.getItem('key'));
     const { _id, tag, task, status } = editTask;
-    const body = { tag, task, status }
+    const body = { tag, task, status };
     await fetchUpdateTask(_id, token, body);
     await fetch();
     setShowModal(false);
@@ -89,7 +89,7 @@ export default function MyTasks({ tasks, fetch, orderUpdate }) {
             colorStatus = 'red'
             break;
           case 'Finished':
-            colorStatus = 'white'
+            colorStatus = 'grey'
             break;
           default:
             break;

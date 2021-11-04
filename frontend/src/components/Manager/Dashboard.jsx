@@ -10,7 +10,7 @@ import Calendar from '../../components/Manager/Calendar';
 
 export default function Dashboard() {
   const [menu, setMenu] = useState({myTasks: 'selectButton'});
-  // const [quantity, setQuantity] = useState({ pending: 0, progress: 0, finished: 0 });
+  const [quantity, setQuantity] = useState({ pending: 0, progress: 0, finished: 0 });
   const [tasks, setTasks] = useState([]);
   const [order, setOrder] = useState('data');
   const [, updateState] = React.useState();
@@ -25,6 +25,10 @@ export default function Dashboard() {
   useEffect(() => {
     orderTasks();
   }, [order]);
+
+  useEffect(() => {
+    quantityTasks();
+  }, [tasks]);
 
   const forceUpdate = React.useCallback(() => updateState({}), []);
 
@@ -76,6 +80,17 @@ export default function Dashboard() {
     forceUpdate();
   }
 
+  const quantityTasks = () => {
+    const pending = tasks.filter((task) => task.status === "Pending");
+    const progress = tasks.filter((task) => task.status === "In Progress");
+    const finished = tasks.filter((task) => task.status === "Finished");
+    setQuantity({ 
+      pending: pending.length, 
+      progress: progress.length, 
+      finished: finished.length 
+    });
+  }
+
   return (
     <div className="dashboard-container">
       <div className="nav-container">
@@ -113,9 +128,9 @@ export default function Dashboard() {
       </div>
       <div className="main-container">
         <div className="bar-container">
-          <h3>Pending: 0</h3>
-          <h3>In Progress: 0</h3>
-          <h3>Finished: 0</h3>
+          <h3>{`Pending: ${quantity.pending}`}</h3>
+          <h3>{`In Progress: ${quantity.progress}`}</h3>
+          <h3>{`Finished: ${quantity.finished}`}</h3>
         </div>
         <div className="components-container">
           { menu.myTasks && <MyTasks tasks={tasks} fetch={fetch} orderUpdate={orderUpdate} /> }

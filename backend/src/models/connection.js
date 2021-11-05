@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 require('dotenv').config();
 
-const MONGO_DB_URL = `mongodb://${process.env.HOST || 'mongodb'}:27017/TaskManager`;
+const MONGO_DB_URL = `${process.env.MONGODB_URI || 'mongodb://localhost:27017/TaskManager'}`;
 const DB_NAME = 'TaskManager';
 
 const connection = () => MongoClient

@@ -18,6 +18,16 @@ Esse projeto foi desenvolvido utilizando:
 
 ---
 
+---
+
+## 🎨 Layout
+
+<div align="center">
+   <img src="./.github/demo.png" width="600px">
+</div>
+ 
+---
+
 ## 📋 Execução
 
 - Antes de executar o projeto, é importante você ter instalado as seguintes ferramentas:
@@ -55,6 +65,15 @@ cd task-manager
 # Baixar as dependências
 # ATENÇÃO: As dependências devem ser instaladas tanto na pasta frontend, quanto backend!
 npm i
+```
+
+- Crie um arquivo .env na pasta backend. Esse arquivo faz parte da dependência Dotenv, e serve pra criar variáveis de ambiente do projeto. Nesse caso, utilize o modelo abaixo:
+
+```bash
+# .env
+SECRET_KEY=secrettoken
+HOST=localhost
+PORT=3001
 ```
 
 - Agora, é necessário executar o script abaixo para ativar o servidor da aplicação (esse script deve ser inserido na pasta backend do projeto).

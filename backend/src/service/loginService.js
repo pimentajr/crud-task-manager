@@ -2,7 +2,9 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/loginModel');
 const { validateLogin, validateEmail } = require('../helpers/validateLogin');
 
-const secret = 'seusecretdetoken';
+require('dotenv').config();
+
+const secret = process.env.SECRET_KEY;
 
 const createNewToken = async (email, password) => {
   if (validateLogin(email, password)) return { erroCode: 'All fields must be filled' };

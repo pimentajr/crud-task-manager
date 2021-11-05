@@ -18,6 +18,16 @@ Esse projeto foi desenvolvido utilizando:
 
 ---
 
+---
+
+## 🎨 Layout
+
+<div align="center">
+   <img src="./.github/demo.png" width="600px">
+</div>
+ 
+---
+
 ## 📋 Execução
 
 - Antes de executar o projeto, é importante você ter instalado as seguintes ferramentas:

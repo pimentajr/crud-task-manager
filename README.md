@@ -67,6 +67,14 @@ cd task-manager
 npm i
 ```
 
+- Crie um arquivo .env na basta backend. Esse arquivo faz parte da dependência Dotenv, e serve pra criar variáveis de ambiente de um projeto. Nesse projeto, utilize o modelo abaixo:
+
+```bash
+SECRET_KEY=secrettoken
+HOST=localhost
+PORT=3001
+```
+
 - Agora, é necessário executar o script abaixo para ativar o servidor da aplicação (esse script deve ser inserido na pasta backend do projeto).
 
 ```bash

@@ -24,10 +24,12 @@ export default function Dashboard() {
 
   useEffect(() => {
     orderTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
   useEffect(() => {
     quantityTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tasks]);
 
   const forceUpdate = React.useCallback(() => updateState({}), []);

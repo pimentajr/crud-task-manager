@@ -67,9 +67,10 @@ cd task-manager
 npm i
 ```
 
-- Crie um arquivo .env na basta backend. Esse arquivo faz parte da dependência Dotenv, e serve pra criar variáveis de ambiente de um projeto. Nesse projeto, utilize o modelo abaixo:
+- Crie um arquivo .env na pasta backend. Esse arquivo faz parte da dependência Dotenv, e serve pra criar variáveis de ambiente do projeto. Nesse caso, utilize o modelo abaixo:
 
 ```bash
+# .env
 SECRET_KEY=secrettoken
 HOST=localhost
 PORT=3001

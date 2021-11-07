@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido utilizando:
 ## 🎨 Layout
 
 <div align="center">
-   <img src="./.github/demo.png" width="600px">
+   <img src="./.github/demo.png" width="1000px">
 </div>
  
 ---

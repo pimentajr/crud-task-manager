@@ -6,6 +6,8 @@
 
 - Para auxiliar os colaboradores em suas tarefas diárias, foi implementado um sistema de gerenciamento de tasks individual e interativo, ou seja, cada usuário tem seu login e senha para criar, editar e excluir suas tarefas de forma fácil e efetiva.
 
+- O deploy do front-end e do back-end foi realizado no Heroku, e o banco de dados foi configurado no MongoDB Atlas. [Clique aqui para acessar a aplicação](https://pimentajr-task-manager-front.herokuapp.com/)
+
 ---
 
 ## 🛠 Tecnologias

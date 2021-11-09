@@ -116,7 +116,7 @@ export default function MyTasks({ tasks, fetch, orderUpdate }) {
         <ReactModal 
            isOpen={showModal}
            contentLabel="Minimal Modal Example"
-           style={customStyles}
+           className="Modal"
            ariaHideApp={false}
            closeTimeoutMS={400}
         >

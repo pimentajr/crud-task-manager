@@ -140,6 +140,34 @@ export default function Dashboard() {
           { menu.calendar && <Calendar /> }
         </div>
       </div>
+      <div className="footer-container">
+        <ul>
+          <li 
+            className={menu.myTasks}
+            name="myTasks"
+            onClick={(event) => selectMenu(event)}
+          >
+            <img src={taskImage} alt="task" />
+          </li>
+          <li 
+            className={menu.kanban} 
+            name="kanban"
+            onClick={(event) => selectMenu(event)}
+          >
+            <img src={kanbanImage} alt="kanban" />
+          </li>
+          <li 
+            className={menu.calendar} 
+            name="calendar"
+            onClick={(event) => selectMenu(event)}
+          >
+            <img src={calendarImage} alt="calendar" />
+          </li>
+          <li onClick={() => redirect()}>
+            <img src={logoutImage} alt="logout" />
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

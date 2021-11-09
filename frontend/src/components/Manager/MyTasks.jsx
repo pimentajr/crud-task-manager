@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReactModal from 'react-modal';
-import customStyles from './customStyles';
 import editImage from '../../images/edit.png';
 import excludeImage from '../../images/exclude.png';
 import { fetchDeleteTask, fetchNewTask, fetchUpdateTask } from '../../helpers/fetch';

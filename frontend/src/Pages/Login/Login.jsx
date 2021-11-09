@@ -32,7 +32,12 @@ export default function Login() {
       </div>
 
       <div className="login-container-image">
-        <ToastContainer
+        <h4>Nice to see you again</h4>
+        <h1>Welcome back</h1>
+        <img src={Wellcome} alt="wellcome" />
+      </div>
+
+      <ToastContainer
           position="top-right"
           autoClose={5000}
           hideProgressBar={false}
@@ -43,10 +48,6 @@ export default function Login() {
           draggable
           pauseOnHover
         />
-        <h4>Nice to see you again</h4>
-        <h1>Welcome back</h1>
-        <img src={Wellcome} alt="wellcome" />
-      </div>
     </div>
   )
 }

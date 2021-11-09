@@ -8,8 +8,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    height: '50vh',
-    width: '50vh',
+    height: '520px',
+    width: '520px',
   },
 };
 

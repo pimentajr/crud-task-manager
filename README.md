@@ -56,13 +56,13 @@ sudo service mongod status
 
 ```bash
 # Clonar o repositório com https
-git clone https://github.com/pimentajr/task-manager.git
+git clone https://github.com/pimentajr/crud-task-manager.git
 
 # Ou clonar o repositório com ssh
-git clone git@github.com:pimentajr/task-manager.git
+git clone git@github.com:pimentajr/crud-task-manager.git
 
 # Entrar no diretório
-cd task-manager
+cd crud-task-manager
 
 # Baixar as dependências
 # ATENÇÃO: As dependências devem ser instaladas tanto na pasta frontend, quanto backend!
